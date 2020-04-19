@@ -1,14 +1,113 @@
-$purple: #9E45BE;
+//Variables
+$openSans: 'Open Sans';
+$grayBg: #eee;
+$breakpoints: ('xSmall': 320px, "small": 600px, "medium": 768px, "large": 1024px) !default;
 
 body {
-    font-family: 'Open Sans';
-    background-color: #eee;
+    font-family: $openSans;
+    background-color: $grayBg;
 }
 
 .value {
     margin-left: 5px;
+    &:before {
+        content: '$';
+    }
+}
+.product-detail {
+    width: 590px;
 }
 
-.value:before {
-    content: '$';
+.products-container {
+    width: 424px;
+    margin-right: 12px;
+
+    & .title {
+        color: #9E45BE;
+        font-weight: 800;
+    }
+
+    & .content {
+        border-top: 1px solid #9E45BE;
+        margin: 8px 10px 0px 0px;
+        padding: 10px 0;
+    }
+
+    & .title {
+        color: #9E45BE;
+        font-weight: 800;
+    }
+
+    & .content {
+        border-top: 1px solid #9E45BE;
+        margin: 8px 10px 0px 0px;
+        padding: 10px 0;
+    }
+}
+
+// grid Variables
+$gap-size: 0.33rem;
+$tile-size: 134px;
+
+
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, $tile-size);
+    grid-gap: $gap-size;
+    &__item {
+        border: 1px solid #ccc;
+        background-color: white;
+        align-items: center;
+        display: flex;
+
+        &.level-1 {
+            grid-row-end: span 4;
+        }
+
+        &.level-2 {
+            grid-row-end: span 5;
+        }
+
+        &.level-3 {
+            grid-row-end: span 6;
+        }
+    }
+    &__image {
+        max-width: 100%;
+    }    
+}
+
+@media all and (min-width: map-get($breakpoints, 'xSmall')) {
+    .grid-gallery {
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+    .product-detail {
+        display: none;
+    }
+
+    .products-container {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: map-get($breakpoints, 'small')) {
+    .grid-gallery {
+        grid-template-columns: repeat(auto-fill, 148px);
+    }
+    .product-detail {
+        display: block;
+    }
+
+}
+
+@media all and (min-width: map-get($breakpoints, 'medium')) {
+    .grid-gallery {
+        grid-template-columns: repeat(auto-fill, 186px);
+    }
+}
+
+@media all and (min-width: map-get($breakpoints, 'large')) {
+    .grid-gallery {
+        grid-template-columns: repeat(auto-fill, $tile-size);
+    }
 }

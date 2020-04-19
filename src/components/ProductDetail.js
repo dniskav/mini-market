@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyleProductDetail = styled.div`
-    width: 330px;
-
     & .title {
         color: #9E45BE;
         font-weight: 800;
@@ -19,7 +17,7 @@ const StyleProductDetail = styled.div`
 
 const ProductDetail = () => {
     return (
-        <StyleProductDetail>
+        <StyleProductDetail className="product-detail">
             <h2 className="title">ProductDetail</h2>
 
             <div className="content">

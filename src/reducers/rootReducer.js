@@ -1,6 +1,6 @@
 import { initialState } from "./initialState";
 import {
-    ADD_TO_CART,
+    ADD_TO_CART, SHOW_IN_DETAILS_VIEW,
 } from "../Actions/actionTypes";
 
 export default (state = initialState, action) => {
@@ -9,6 +9,10 @@ export default (state = initialState, action) => {
             const { item } = action;
             const { cart } = state;
             return { ...state, cart: [...cart, item] };
+        case SHOW_IN_DETAILS_VIEW:
+            const { detailedItem } = action;
+            const { detailsView } = state;
+            return { ...state, detailedItem };
         default:
             return state;
     }

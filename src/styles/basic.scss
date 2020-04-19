@@ -1,0 +1,14 @@
+$purple: #9E45BE;
+
+body {
+    font-family: 'Open Sans';
+    background-color: #eee;
+}
+
+.value {
+    margin-left: 5px;
+}
+
+.value:before {
+    content: '$';
+}

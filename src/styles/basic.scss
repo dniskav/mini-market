@@ -65,6 +65,7 @@ body {
     width: 590px;
 }
 
+.cart,
 .products-container {
     width: 424px;
     margin-right: 12px;
@@ -92,6 +93,44 @@ body {
     }
 }
 
+// cart
+.cart {
+    width: 568px;
+
+    .cart-product {
+
+        &__row {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+    }
+
+    img {
+        width: 65px;
+    }
+}
+
+.relative-pill {
+    margin-right: 30px;
+
+    .pill {
+        position: relative;
+    }
+}
+
+.total {
+    text-align: right;
+    font-weight: 800;
+    .label {
+        color: #C2C2C2;
+    }
+    .price {
+        color: #9E45BE;
+    }
+}
 // grid Variables
 $gap-size: 0.33rem;
 $tile-size: 134px;
@@ -107,7 +146,7 @@ $tile-size: 134px;
         align-items: center;
         display: flex;
         position: relative;
-        
+
         .pill {
             top: 3px;
             width: 24px;

@@ -1,4 +1,8 @@
-export const initialState = {
+const initialState = {
     cart: [],
     detailedItem: {},
+    showCart: false,
+    route: 'Home',
 };
+
+export default initialState;

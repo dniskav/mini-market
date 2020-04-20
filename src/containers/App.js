@@ -7,6 +7,8 @@ import Content from '../components/Content';
 import Products from '../components/Products';
 import ProductDetail from '../components/ProductDetail';
 import styled from 'styled-components';
+import Cart from '../components/Cart';
+import { useSelector } from 'react-redux';
 
 const Breadcrumbs = styled.h1`
     text-align: center;
@@ -17,15 +19,21 @@ const Breadcrumbs = styled.h1`
 `;
 
 const App = () => {
+    const cartVisible = useSelector(state => state.showCart);
+    const route = useSelector(state => state.route);
 
     return (
         <>
-        <Breadcrumbs>Mini Market • Product Detail</Breadcrumbs>
+        <Breadcrumbs>Mini Market • {route}</Breadcrumbs>
         <MainContainer>
             <Hero />
             <Content>
                 <Products />
-                <ProductDetail />
+                {cartVisible ? 
+                    <Cart />
+                :
+                    <ProductDetail />
+                }
             </Content>
         </MainContainer>
         </>

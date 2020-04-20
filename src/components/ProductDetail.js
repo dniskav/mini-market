@@ -29,10 +29,10 @@ const ProductDetail = () => {
 
     return (
         <StyleProductDetail className="product-detail">
-            <h2 className="title">ProductDetail</h2>
+            <h2 className="title">Product Detail</h2>
 
             <div className="content">
-                {typeof pdd.id !== 'undefined' ? 
+                {typeof pdd !== 'undefined' && typeof pdd.id !== 'undefined' ? 
                 <div className="paper">
                     <ProductCount productId={pdd.id} />
                     <img className="pdd-image" src={pdd.img} />

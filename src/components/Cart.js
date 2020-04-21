@@ -1,11 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import ProductCount from './ProductCount';
-import TotalPrice from './TotalPrice';
-
-function removeDuplicates(array) {
-    return array.filter((a, b) => array.findIndex(i => i.id === a.id) === b);
-}
+import { total } from './TotalPrice';
+import Wompi from './Wompi';
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
@@ -29,10 +26,10 @@ const Cart = () => {
                     <span className="total">
                         <span className="label">Total: </span>
                         <span className="price">
-                            <span className="value"><TotalPrice /></span>
+                            <span className="value">{total}</span>
                         </span>
                     </span>
-                    
+                    <Wompi />
                 </div>
             </div>
         </div>

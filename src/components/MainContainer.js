@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const MainContainer = ({ children }) => (
-    <Container>
+    <Container className="main-container">
         {children}
     </Container>
 );

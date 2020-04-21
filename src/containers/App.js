@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'reset-css';
 import '../styles/basic.scss';
 import MainContainer from '../components/MainContainer';
@@ -12,7 +12,6 @@ import { useSelector } from 'react-redux';
 
 const Breadcrumbs = styled.h1`
     text-align: center;
-    font-size: 22px;
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 24px;
@@ -25,9 +24,11 @@ const App = () => {
     return (
         <>
         <MainContainer>
-            <Breadcrumbs>Mini Market • {route}</Breadcrumbs>
-            <Hero />
-            <Content>
+            <header>
+                <Breadcrumbs>Mini Market • {route}</Breadcrumbs>
+                <Hero />
+            </header>
+            <Content className="content">
                 <Products />
                 {cartVisible ? 
                     <Cart />

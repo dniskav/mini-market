@@ -1,0 +1,39 @@
+// grid Variables
+$gap-size: 0.33rem;
+$tile-size: 126px;
+
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, $tile-size);
+    grid-gap: $gap-size;
+    &__item {
+        border: 1px solid #ccc;
+        background-color: white;
+        align-items: center;
+        display: flex;
+        position: relative;
+
+        .pill {
+            top: 3px;
+            width: 24px;
+            height: 24px;
+            font-size: 12px;
+            left: 3px;
+        }
+
+        &.level-1 {
+            grid-row-end: span 4;
+        }
+
+        &.level-2 {
+            grid-row-end: span 5;
+        }
+
+        &.level-3 {
+            grid-row-end: span 6;
+        }
+    }
+    &__image {
+        max-width: 100%;
+    }    
+}

@@ -1,6 +1,13 @@
 import initialState from "./initialState";
 import {
-    ADD_TO_CART, SHOW_IN_DETAILS_VIEW, REMOVE_FROM_CART, SHOW_CART, CLEAR_CART,
+    ADD_TO_CART,
+    SHOW_IN_DETAILS_VIEW,
+    REMOVE_FROM_CART,
+    SHOW_CART,
+    CLEAR_CART,
+    START_GET_PRODUCTS,
+    SUCCESS_GET_PRODUCTS,
+    ERROR_GET_PRODUCTS,
 } from "../Actions/actionTypes";
 
 export default (state = initialState, action) => {
@@ -19,6 +26,14 @@ export default (state = initialState, action) => {
             return { ...state,  showCart: true, route: 'Cart' };
         case CLEAR_CART:
             return { ...state,  cart: []};
+        case START_GET_PRODUCTS:
+            return { ...state,  fetchingProducts: true };
+        case SUCCESS_GET_PRODUCTS:
+            const { products } = action;
+            return { ...state,  products, fetchingProducts: false };
+        case ERROR_GET_PRODUCTS:
+            const { error } = action;
+            return { ...state,  error, fetchingProducts: false };
         default:
             return state;
     }

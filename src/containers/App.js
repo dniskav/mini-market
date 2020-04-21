@@ -8,7 +8,7 @@ import Products from '../components/Products';
 import ProductDetail from '../components/ProductDetail';
 import styled from 'styled-components';
 import Cart from '../components/Cart';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Breadcrumbs = styled.h1`
     text-align: center;

@@ -24,8 +24,8 @@ const App = () => {
 
     return (
         <>
-        <Breadcrumbs>Mini Market • {route}</Breadcrumbs>
         <MainContainer>
+            <Breadcrumbs>Mini Market • {route}</Breadcrumbs>
             <Hero />
             <Content>
                 <Products />

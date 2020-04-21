@@ -1,18 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+export let total = 0;
+
 const TotalPrice = () => {
-    const total = useSelector(state => state.cart.reduce((acum, el) => {
+    total = useSelector(state => state.cart.reduce((acum, el) => {
         if(el.price) {
             return acum + parseFloat(el.price);
         }
 
         return acum;
-    }, 0));
+    }, 0).toFixed(2));
 
     return (
         <>
-            {total.toFixed(2)}
+            {total}
         </>
     );
 };

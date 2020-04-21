@@ -1,0 +1,62 @@
+
+$breakpoints: ('xSmall': 320px, "small": 414px, "medium": 768px, "large": 1024px) !default;
+
+@media all and (max-width: map-get($breakpoints, 'medium')) {
+    .products-container {
+        width: 480px;
+    }
+}
+
+@media all and (max-width: map-get($breakpoints, 'small')) {
+
+    header {
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.9);
+        h1 {
+            font-size: 16px;
+        }
+    }
+
+    .main-container > .content {
+        margin-top: 110px;
+    }
+
+    .products-container {
+        width: 144px;
+    }
+
+    .product-detail {
+        .content {
+            position: fixed;
+        }
+    }
+
+    .pdd-description {
+        .show-more {
+            font-size:10px;
+            font-size: 10px;
+            display: block;
+            overflow: scroll;
+            height: 100px;
+        }
+
+        .show-more-trigger {
+            display: none;
+        }
+    }
+}
+
+@media all and (max-width: map-get($breakpoints, 'xSmall')) {
+    .grid-gallery {
+        grid-template-columns: repeat(auto-fill, 98px);
+    }
+
+    .products-container {
+        width: 110px;
+    }
+}

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const StyledControls = styled.span`
     width: 80px;
+    white-space: nowrap;
 `;
 
 const CartControls = ({ product }) => {

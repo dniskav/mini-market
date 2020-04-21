@@ -3,6 +3,9 @@ const initialState = {
     detailedItem: {},
     showCart: false,
     route: 'Home',
+    fetchingProducts: false,
+    products: [],
+    error: {}
 };
 
 export default initialState;

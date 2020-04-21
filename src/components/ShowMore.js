@@ -32,10 +32,10 @@ const ShowMore = ({ data }) => {
 
     return (
     <>
-        <Container className={showMore ? 'expanded' : ''}>
+        <Container className={showMore ? 'expanded show-more' : 'show-more'}>
             {data}
         </Container>
-        <Trigger onClick={() => {sm()}}>{showMore ? '▴' : '▾'}</Trigger>
+        <Trigger className="show-more-trigger" onClick={() => {sm()}}>{showMore ? '▴' : '▾'}</Trigger>
     </>
     );
 };

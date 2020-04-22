@@ -1,5 +1,5 @@
 import React from 'react';
-import { total } from './TotalPrice';
+import { total } from '../TotalPrice';
 import ScriptTag from 'react-script-tag';
 
 const Wompi = () => {

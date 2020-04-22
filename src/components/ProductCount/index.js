@@ -1,6 +1,8 @@
 import React from 'react';
-import Pill from './Pill';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import Pill from '../Pill';
 
 const ProductCount = ({ productId, showEmpty = true }) => {
     const quantity = useSelector(state => state.cart.filter(el => {
@@ -16,6 +18,11 @@ const ProductCount = ({ productId, showEmpty = true }) => {
             }
         </>
     );
+};
+
+ProductCount.propTypes = {
+    productId: PropTypes.number,
+    showEmpty: PropTypes.bool,
 };
 
 export default ProductCount;

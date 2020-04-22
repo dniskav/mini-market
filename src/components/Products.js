@@ -32,7 +32,7 @@ const Products = () => {
             <div className="content">
                 <ul className="grid-gallery">
                 {loading ? 
-                    (<Spinner src="src/assets/spinner.gif" />)
+                    (<Spinner src="assets/spinner.gif" />)
                     : 
                     (products.map( e => (
                         <li key={e.id} className={`grid-gallery__item level-${e.imgHeight}`}>

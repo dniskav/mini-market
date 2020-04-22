@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledPill = styled.div`
     background: #9E45BE;
@@ -18,5 +19,9 @@ const Pill = ({ data }) => (
         {data}
     </StyledPill>
 );
+
+Pill.propTypes = {
+    data: PropTypes.any,
+}
 
 export default Pill;
